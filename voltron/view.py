@@ -394,9 +394,9 @@ class TerminalView (VoltronView):
             lines.append(line)
 
         # truncate body vertically
-        lines = lines[:self.body_height()]
+        #lines = lines[:self.body_height()]
 
-        self.fmt_body = '\n'.join(lines)
+        #self.fmt_body = '\n'.join(lines)
 
 
 def merge(d1, d2):
