@@ -292,7 +292,8 @@ class TerminalView (VoltronView):
         os.system('tput cnorm')
 
     def clear(self):
-        os.system('clear')
+		os.system('clear && printf \'\e[3J\'\n')
+        #os.system('clear')
 
     def render(self):
         self.do_render()
@@ -306,7 +307,7 @@ class TerminalView (VoltronView):
             self.body = self.colour(error, 'red')
 
         # Refresh the formatted body
-        self.fmt_body = self.body
+        self.fmt_body =  self.body
 
         # Pad and truncate the body
         self.pad_body()
@@ -396,7 +397,7 @@ class TerminalView (VoltronView):
         # truncate body vertically
         #lines = lines[:self.body_height()]
 
-        #self.fmt_body = '\n'.join(lines)
+        self.fmt_body = '\n'.join(lines)
 
 
 def merge(d1, d2):
